@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #0072ff, #00c6ff); /* 藍色漸變背景 */
+  color: black;  
+  padding: 20px;
+  min-height: 100vh;
+  
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  letter-spacing: 1px;
+}
+
+table {
+  width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.content-container {
+  max-width: 100%; /* 容器最大寬度 */
+  max-height: 100px; /* 限制容器高度，這裡設為300px，可以根據需要調整 */
+  max-width: 250px;
+  overflow: auto; /* 當內容過長時，允許滾動 */
+  border: 1px solid #ddd; /* 添加邊框以區分滾動區域 */
+}
+
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  word-wrap: break-word; /* 允許單詞換行 */
+  word-break: break-all;  /* 防止單元格過寬 */
+}
+
+th {
+  background: rgba(0, 114, 255, 0.8); /* 深藍色背景 */
+  font-weight: bold;
+}
+
+td {
+  background: rgba(0, 198, 255, 0.5); /* 輕微的藍色背景 */
+}
+
+button {
+  background-color: #ff4b5c; /* 紅色按鈕 */
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff1c2b; /* 更深的紅色當鼠標懸停 */
+}
+
+form {
+  margin: 0;
+}
+
+/* 一鍵清空按鈕的額外樣式 */
+.delete-all-button {
+  background-color: #ffa500; /* 橙色按鈕 */
+  margin-top: 20px;
+}
+
+.delete-all-button:hover {
+  background-color: #ff8500; /* 深橙色當鼠標懸停 */
+}

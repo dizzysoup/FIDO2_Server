@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS fidodb;
+
+CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON fidodb.* TO 'user'@'%';
+
+
+USE fidodb;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL,
+  info VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (username)
+) ;
+
+FLUSH PRIVILEGES;
