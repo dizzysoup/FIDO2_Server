@@ -33,7 +33,7 @@ router.get('/' , async function(req,res){
 router.get('/challenge' , async function(req , res ){
 	
 	//const base64urlChallenge = server.randomChallenge()
-	const base64urlChallenge  = "6LBb0WByv9yB2xobAIVBIQ"
+	const base64urlChallenge  = "NmU8v1SQkfIDNb9OQEplMzVB"
 	process.env.CHALLENGE = base64urlChallenge ; 
 	console.log("Get challenge:" , base64urlChallenge);
 	return res.send(base64urlChallenge);
@@ -56,14 +56,15 @@ router.post('/register', async function(req, res) {
 		if (!req.body) {
             return res.status(400).send("請求體為空，無法處理");
         }
+
 		const expected = {
-			challenge : req.body.challenge,
-			origin : "*"
+			challenge : "NmU8v1SQkfIDNb9OQEplMzVB",
+			origin :'https://webauthn.passwordless.id'
 		}
 		const registration = req.body ; 
 		console.log(" stored Challenge : " ,  process.env.CHALLENGE);	
-		
-		const registrationParsed = await server.verifyRegistration(registration.data, expected);
+		console.log("registration:" , registration);
+		const registrationParsed = await server.verifyRegistration(registration, expected);
 		console.log("registrationParsed:" , registrationParsed);	
 		const id = registrationParsed.credential.id ; 
 		const publicKey = registrationParsed.credential.publicKey;
